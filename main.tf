@@ -12,3 +12,11 @@ resource "aws_s3_bucket_versioning" "enable" {
     status = "Enabled"
   }
 }
+
+# TODO: toggle config when/if needed
+resource "aws_s3_bucket_ownership_controls" "default" {
+  bucket = aws_s3_bucket.default.id
+  rule {
+    object_ownership = var.object_ownership
+  }
+}

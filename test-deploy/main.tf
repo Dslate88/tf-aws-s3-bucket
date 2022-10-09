@@ -2,7 +2,7 @@ locals {
   region       = "us-east-1"
   stack_name   = "test_s3_bucket"
   bogus_bucket = "bogus-adfadafdafw"
-  is_versioned = false
+  is_versioned = true
 }
 
 module "s3_bucket" {

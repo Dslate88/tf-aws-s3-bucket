@@ -11,3 +11,9 @@ variable "is_versioned" {
   default     = false
   description = "true enables s3 bucket versioning"
 }
+
+variable "object_ownership" {
+  type        = string
+  default     = "BucketOwnerEnforced"
+  description = "BucketOwnerEnforced disables ACLs, account owns all objects"
+}
