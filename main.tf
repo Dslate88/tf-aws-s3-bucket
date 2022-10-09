@@ -29,3 +29,14 @@ resource "aws_s3_bucket_public_access_block" "default" {
   ignore_public_acls      = var.is_public
   restrict_public_buckets = var.is_public
 }
+
+# TODO: enable kms standard and/or s3_bucket_keys
+resource "aws_s3_bucket_server_side_encryption_configuration" "default" {
+  bucket = aws_s3_bucket.default.bucket
+  rule {
+    apply_server_side_encryption_by_default {
+      # kms_master_key_id = aws_kms_key.mykey.arn
+      sse_algorithm = "AES256"
+    }
+  }
+}
