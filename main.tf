@@ -22,7 +22,6 @@ resource "aws_s3_bucket_ownership_controls" "default" {
 }
 
 resource "aws_s3_bucket_public_access_block" "default" {
-  count                   = var.is_public ? 1 : 0
   bucket                  = aws_s3_bucket.default.id
   block_public_acls       = var.is_public
   block_public_policy     = var.is_public

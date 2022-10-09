@@ -3,7 +3,7 @@ locals {
   stack_name     = "test_s3_bucket"
   test_s3_bucket = "test-s3-bucket-19834713"
   is_versioned   = true
-  is_public      = true
+  is_public      = false
 }
 
 module "s3_bucket" {
