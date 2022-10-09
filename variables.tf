@@ -17,3 +17,9 @@ variable "object_ownership" {
   default     = "BucketOwnerEnforced"
   description = "BucketOwnerEnforced disables ACLs, account owns all objects"
 }
+
+variable "is_public" {
+  type        = bool
+  default     = false
+  description = "true enables s3 public access via 4 acl settings"
+}
