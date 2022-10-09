@@ -23,10 +23,10 @@ resource "aws_s3_bucket_ownership_controls" "default" {
 
 resource "aws_s3_bucket_public_access_block" "default" {
   bucket                  = aws_s3_bucket.default.id
-  block_public_acls       = var.is_public
-  block_public_policy     = var.is_public
-  ignore_public_acls      = var.is_public
-  restrict_public_buckets = var.is_public
+  block_public_acls       = var.is_private
+  block_public_policy     = var.is_private
+  ignore_public_acls      = var.is_private
+  restrict_public_buckets = var.is_private
 }
 
 # TODO: enable kms standard and/or s3_bucket_keys
